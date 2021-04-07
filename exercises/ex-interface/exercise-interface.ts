@@ -53,7 +53,7 @@ const Exercise2 = () => {
     // • Fix whatever is wrong with `tampa`
   
     // [do not edit] (pretend this is coming from external `foo.d.ts` lib)
-    interface City extends Coords {
+    interface City {
       name: string
     }
     // [/do not edit]
@@ -62,24 +62,33 @@ const Exercise2 = () => {
         latitude: number;
         longitude: number;
     }
+
+    interface City {
+        coord: Coords
+    }
   
     const montreal = {
-        
-        latitude: 42.332,
-        longitude: -73.324,
+        coord: {
+            latitude: 42.332,
+            longitude: -73.324,
+
+        },
         name: 'Montréal',
     }
   
     const tampa = {
-        latitude: 27.9478,
-        longitude: -82.4584,
+        coord: {
+            latitude: 27.9478,
+            longitude: -82.4584,
+
+        },
         name: 'Tampa',
     }
   
     function getCityInfo(city: City) {
-      const coords = `(${city.latitude.toFixed(
+      const coords = `(${city.coord.latitude.toFixed(
         3
-      )}, ${city.longitude.toFixed(3)})`
+      )}, ${city.coord.longitude.toFixed(3)})`
       return `${city.name.toUpperCase()} is located at ${coords}.`
     }
   
