@@ -89,6 +89,9 @@ const Exercise2 = () => {
       )}, ${city.coord.longitude.toFixed(3)})`
       return `${city.name.toUpperCase()} is located at ${coords}.`
     }
+
+    //string | number union
+    //string & number intersection
   
     console.log(
       '[Exercise 2.3]',
