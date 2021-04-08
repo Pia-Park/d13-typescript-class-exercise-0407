@@ -16,10 +16,10 @@ const Exercise2 = () => {
     interface CartItem {
         id: number; 
         title: string; 
-        // variantId: number;
+        variantId?: number;
     }
   
-    function addToCart(item: CartItem):void {
+    function addToCart(item: CartItem) {
       console.log('[Exercise 2.1]', `Adding "${item.title}" to cart.`)
     }
   
@@ -36,8 +36,6 @@ const Exercise2 = () => {
     
     class Person implements PersonType {
       constructor(public name: string, public age: number) {
-        //   this.name = name;
-        //   this.age = age;
       }
     }
   
